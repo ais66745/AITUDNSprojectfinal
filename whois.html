@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>whoIS</title>
+  </head>
+  <style>
+    /* Container styles */
+    .DomainInfo {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Heading styles */
+    h2 {
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* List styles */
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    /* Item styles */
+    .item {
+      margin-bottom: 10px;
+    }
+
+    h4 {
+      font-size: 16px;
+      margin: 0;
+    }
+  </style>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <div class="header_inner">
+          <div class="logo">
+            <img
+              src="../static/50b366df58e34a52b3ec66ab68705f67(1).png"
+              alt=""
+            />
+          </div>
+          <div class="header_link">
+            <a href="/" class="link_item">About</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="DomainInfo">
+      <p>Domain Name: {{.Domain}}</p>
+      <h2>Status:</h2>
+      <ul>
+        {{range .Status}}
+        <li>{{.}}</li>
+        {{end}}
+      </ul>
+      <h2>All Server names:</h2>
+      <ul>
+        {{range .NameServers}}
+        <li>{{.}}</li>
+        {{end}}
+      </ul>
+      <div class="item">
+        <h4>Registrar:</h4>
+        {{.Registrar }}
+      </div>
+      <div class="item">
+        <h4>RegisteredOn:</h4>
+        {{.RegisteredOn }}
+      </div>
+      <div class="item">
+        <h4>ExpiresOn:</h4>
+        {{.ExpiresOn }}
+      </div>
+      <div class="item">
+        <h4>Country:</h4>
+        {{.Country }}
+      </div>
+      <div class="item">
+        <h4>Latitude:</h4>
+        {{.Latitude }}
+      </div>
+      <div class="item">
+        <h4>Longitude:</h4>
+        {{.Longitude}}
+      </div>
+      <div class="item">
+        <h4>Code:</h4>
+        {{.CountryCode }}
+      </div>
+
+      <div class="item">
+        <h4>Country:</h4>
+        {{.Country }}
+      </div>
+    </div>
+  </body>
+</html>
